@@ -27,6 +27,6 @@ def b(blocks):
 
 
 if __name__ == '__main__':
-    with open('input6.txt') as f:
+    with open('input06.txt') as f:
         input = list(map(int, f.read().split('\t')))
         print(a(input))

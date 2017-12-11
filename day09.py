@@ -56,7 +56,7 @@ def sum_nested_groups(group, level=1):
     return level + sum(sums)
 
 
-with open('input9.txt') as f:
+with open('input09.txt') as f:
     top_group = f.read().strip()
     print(sum_nested_groups(top_group))
     print(n_garbage)

@@ -29,5 +29,5 @@ def b(passphrases):
 
 
 if __name__ == '__main__':
-    with open('input4.txt') as f:
+    with open('input04.txt') as f:
         print(b(f.read().split('\n')))

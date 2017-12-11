@@ -52,7 +52,7 @@ def b(discs):
 
 if __name__ == '__main__':
     discs = {}
-    with open('input7.txt') as f:
+    with open('input07.txt') as f:
         for line in f.readlines():
             line = line.strip()
             name, weight, *_ = line.split(' ')

@@ -20,6 +20,6 @@ def b(digits):
 
 
 if __name__ == '__main__':
-    with open('input1.txt') as f:
+    with open('input01.txt') as f:
         digits = list(map(int, f.read()))
     print(b(digits))

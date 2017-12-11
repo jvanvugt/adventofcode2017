@@ -17,5 +17,5 @@ def b(spreadsheet):
 
 
 if __name__ == '__main__':
-    data = np.loadtxt('input2.txt', dtype=np.int, delimiter='\t')
+    data = np.loadtxt('input02.txt', dtype=np.int, delimiter='\t')
     print(b(np.array(data)))

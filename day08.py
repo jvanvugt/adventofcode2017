@@ -27,6 +27,6 @@ def b(instructions):
     return max_all_time
 
 
-with open('input8.txt') as f:
+with open('input08.txt') as f:
     instructions = f.read().strip().splitlines()
     print(b(instructions))

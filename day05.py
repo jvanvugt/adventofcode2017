@@ -21,6 +21,6 @@ def b(nums):
 
 
 if __name__ == '__main__':
-    with open('input5.txt') as f:
+    with open('input05.txt') as f:
         instructions = list(map(int, f.read().strip().split('\n')))
         print(b(instructions))

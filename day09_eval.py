@@ -10,7 +10,7 @@ def count_garbage(group):
         return len(group)
     return sum(count_garbage(c) for c in group)
 
-with open('input9.txt') as f:
+with open('input09.txt') as f:
     top_group = re.sub('!.', '', f.read().strip().replace('"', '_').replace('{', '[').replace('}', ']'))
     i = 0
     while i < len(top_group):
