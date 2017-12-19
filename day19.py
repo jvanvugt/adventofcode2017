@@ -6,10 +6,10 @@ def a(diagram):
     pos = [diagram[0].index('|'), 0]
     current_dir = 'D'
     directions = {
-        'D': [0, 1],
-        'U': [0, -1],
-        'L': [-1, 0],
-        'R': [1, 0]
+        'D': [ 0,  1],
+        'U': [ 0, -1],
+        'L': [-1,  0],
+        'R': [ 1,  0]
     }
     dir_to_char = {
         'D': '|',
@@ -19,20 +19,16 @@ def a(diagram):
     }
     letters = []
 
-    def d(pos):
-        return diagram[pos[1]][pos[0]]
-
     while True:
-        if d(pos) == ' ':
+        if diagram[pos[1]][pos[0]] == ' ':
             break
-        if d(pos) in string.ascii_uppercase:
+        if diagram[pos[1]][pos[0]] in string.ascii_uppercase:
             letters.append(d(pos))
             diagram[pos[1]][pos[0]] = dir_to_char[current_dir]
 
-        elif d(pos) == '+':
+        elif diagram[pos[1]][pos[0]] == '+':
             if current_dir in ('U', 'D'):
                 sub = ''.join([diagram[pos[1]][i] for i in range(pos[0]-1, pos[0]+2)])
-                assert len(sub) == 3
                 side = re.search('[A-Z-]', sub).start()
                 if side == 0:
                     current_dir = 'L'
@@ -40,7 +36,6 @@ def a(diagram):
                     current_dir = 'R'
             elif current_dir in ('L', 'R'):
                 sub = ''.join([diagram[i][pos[0]] for i in range(pos[1]-1, pos[1]+2)])
-                assert len(sub) == 3
                 side = re.search('[A-Z\|]', sub).start()
                 if side == 0:
                     current_dir = 'U'
@@ -54,10 +49,10 @@ def b(diagram):
     pos = [diagram[0].index('|'), 0]
     current_dir = 'D'
     directions = {
-        'D': [0, 1],
-        'U': [0, -1],
-        'L': [-1, 0],
-        'R': [1, 0]
+        'D': [ 0,  1],
+        'U': [ 0, -1],
+        'L': [-1,  0],
+        'R': [ 1,  0]
     }
     dir_to_char = {
         'D': '|',
@@ -67,19 +62,15 @@ def b(diagram):
     }
     n_steps = 0
 
-    def d(pos):
-        return diagram[pos[1]][pos[0]]
-
     while True:
-        if d(pos) == ' ':
+        if diagram[pos[1]][pos[0]] == ' ':
             break
-        if d(pos) in string.ascii_uppercase:
+        if diagram[pos[1]][pos[0]] in string.ascii_uppercase:
             diagram[pos[1]][pos[0]] = dir_to_char[current_dir]
 
-        elif d(pos) == '+':
+        elif diagram[pos[1]][pos[0]] == '+':
             if current_dir in ('U', 'D'):
                 sub = ''.join([diagram[pos[1]][i] for i in range(pos[0]-1, pos[0]+2)])
-                assert len(sub) == 3
                 side = re.search('[A-Z-]', sub).start()
                 if side == 0:
                     current_dir = 'L'
@@ -87,7 +78,6 @@ def b(diagram):
                     current_dir = 'R'
             elif current_dir in ('L', 'R'):
                 sub = ''.join([diagram[i][pos[0]] for i in range(pos[1]-1, pos[1]+2)])
-                assert len(sub) == 3
                 side = re.search('[A-Z\|]', sub).start()
                 if side == 0:
                     current_dir = 'U'
