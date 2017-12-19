@@ -36,7 +36,7 @@ def a(diagram):
                     current_dir = 'R'
             elif current_dir in ('L', 'R'):
                 sub = ''.join([diagram[i][pos[0]] for i in range(pos[1]-1, pos[1]+2)])
-                side = re.search('[A-Z\|]', sub).start()
+                side = re.search('[A-Z|]', sub).start()
                 if side == 0:
                     current_dir = 'U'
                 if side == 2:
@@ -78,7 +78,7 @@ def b(diagram):
                     current_dir = 'R'
             elif current_dir in ('L', 'R'):
                 sub = ''.join([diagram[i][pos[0]] for i in range(pos[1]-1, pos[1]+2)])
-                side = re.search('[A-Z\|]', sub).start()
+                side = re.search('[A-Z|]', sub).start()
                 if side == 0:
                     current_dir = 'U'
                 if side == 2:
